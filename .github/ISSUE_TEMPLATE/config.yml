@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/themuzammilnawaz/Wallzy#readme
+    about: Read the README for installation and usage instructions.
+  - name: 💬 Discussions
+    url: https://github.com/themuzammilnawaz/Wallzy/discussions
+    about: Ask questions and discuss ideas with the community.
+  - name: 🌐 Gallery
+    url: https://themuzammilnawaz.github.io/Wallzy/
+    about: Browse all wallpapers in the interactive gallery.
+  - name: 📬 Contact Muzammil Nawaz
+    url: https://wa.me/+923057954200/
+    about: Reach out directly via WhatsApp.

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#4d6bfe">
+  <meta name="color-scheme" content="light dark">
+
+  <!-- SEO -->
+  <title>Wallzy — Curated Wallpaper Archive by Muzammil Nawaz</title>
+  <meta name="description" content="Wallzy is a curated, open-source wallpaper archive with 2000+ wallpapers across 8 categories. Built for Linux, works everywhere. Curated & developed by Muzammil Nawaz.">
+  <meta name="keywords" content="wallpapers, linux wallpapers, 4k wallpapers, ubuntu wallpapers, dark wallpapers, minimal wallpapers, nature wallpapers, anime wallpapers, space wallpapers">
+  <meta name="author" content="Muzammil Nawaz">
+  <link rel="canonical" href="https://themuzammilnawaz.github.io/Wallzy/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://themuzammilnawaz.github.io/Wallzy/">
+  <meta property="og:title" content="Wallzy — Curated Wallpaper Archive by Muzammil Nawaz">
+  <meta property="og:description" content="2000+ high-quality wallpapers across 8 categories. Built for Linux, works everywhere.">
+  <meta property="og:image" content="https://themuzammilnawaz.github.io/Wallzy/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wallzy — Curated Wallpaper Archive">
+  <meta name="twitter:description" content="2000+ high-quality wallpapers across 8 categories. Built for Linux, works everywhere.">
+  <meta name="twitter:creator" content="@themuzammilnawaz">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Wallzy",
+    "url": "https://themuzammilnawaz.github.io/Wallzy/",
+    "description": "A curated, open-source wallpaper archive for Linux and beyond.",
+    "author": {
+      "@type": "Person",
+      "name": "Muzammil Nawaz",
+      "url": "https://github.com/themuzammilnawaz"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="./" class="logo" aria-label="Wallzy home">
+        <span class="logo-icon">🎨</span>
+        <span class="logo-text">Wallzy</span>
+      </a>
+
+      <div class="header-search">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search wallpapers…"
+          autocomplete="off"
+          aria-label="Search wallpapers"
+        >
+        <kbd class="search-kbd" aria-hidden="true">/</kbd>
+      </div>
+
+      <div class="header-actions">
+        <a href="https://github.com/themuzammilnawaz/Wallzy" class="header-btn" target="_blank" rel="noopener" aria-label="GitHub repository">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+            <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 22.3 24 17.8 24 12.5 24 5.87 18.63.5 12 .5z"/>
+          </svg>
+        </a>
+        <button class="header-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Curated by Muzammil Nawaz</div>
+      <h1 class="hero-title">A beautiful wallpaper archive<br>for your desktop</h1>
+      <p class="hero-subtitle">
+        <span id="heroCount">2000+</span> high-quality wallpapers across <span id="heroCategories">8</span> categories.
+        Built for Linux, works everywhere.
+      </p>
+      <div class="hero-actions">
+        <a href="#wallpapers" class="btn btn-primary">Browse wallpapers</a>
+        <button class="btn btn-outline" id="copyInstall" data-command="curl -fsSL https://raw.githubusercontent.com/themuzammilnawaz/Wallzy/main/install.sh | bash">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+            <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          Copy install command
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="main" id="wallpapers">
+    <!-- Category filter -->
+    <nav class="filters" id="filters" aria-label="Category filter">
+      <button class="filter-chip active" data-category="all">
+        <span class="filter-icon">✦</span>
+        <span>All</span>
+        <span class="filter-count" id="countAll">0</span>
+      </button>
+      <!-- Chips injected by JS -->
+    </nav>
+
+    <!-- Results bar -->
+    <div class="results-bar" id="resultsBar" hidden>
+      <span id="resultsText"></span>
+      <button class="clear-btn" id="clearFilters" hidden>Clear filters</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid" id="grid" role="list"></div>
+
+    <!-- Empty state -->
+    <div class="empty" id="empty" hidden>
+      <div class="empty-icon">🖼️</div>
+      <h2 class="empty-title">No wallpapers found</h2>
+      <p class="empty-text" id="emptyText">Try a different search or category.</p>
+      <button class="btn btn-primary" onclick="clearAll()">Clear filters</button>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Loading wallpapers…</p>
+    </div>
+
+    <!-- Load more -->
+    <div class="load-more" id="loadMore" hidden>
+      <button class="btn btn-outline" id="loadMoreBtn">Load more</button>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Wallpaper preview">
+    <button class="lb-close" id="lbClose" aria-label="Close preview">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous wallpaper">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+    </button>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next wallpaper">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+        <path d="m9 18 6-6-6-6"/>
+      </svg>
+    </button>
+    <div class="lb-content">
+      <img class="lb-image" id="lbImage" alt="">
+      <div class="lb-info">
+        <div class="lb-info-left">
+          <h3 class="lb-title" id="lbTitle"></h3>
+          <p class="lb-meta" id="lbMeta"></p>
+        </div>
+        <div class="lb-info-right">
+          <a class="btn btn-primary" id="lbDownload" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">🎨 Wallzy</div>
+        <p class="footer-tagline">A curated, open-source wallpaper archive.</p>
+        <p class="footer-credit">
+          Curated &amp; developed by
+          <a href="https://github.com/themuzammilnawaz" target="_blank" rel="noopener">Muzammil Nawaz</a>
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4 class="footer-heading">Archive</h4>
+        <a href="#wallpapers">Browse</a>
+        <a href="https://github.com/themuzammilnawaz/Wallzy" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/themuzammilnawaz/Wallzy/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a>
+        <a href="https://github.com/themuzammilnawaz/Wallzy/issues" target="_blank" rel="noopener">Report issue</a>
+      </div>
+
+      <div class="footer-links">
+        <h4 class="footer-heading">Connect</h4>
+        <a href="https://wa.me/+923057954200/" target="_blank" rel="noopener">
+          <span class="social-dot whatsapp"></span> WhatsApp
+        </a>
+        <a href="https://www.facebook.com/themuzammilnawaz/" target="_blank" rel="noopener">
+          <span class="social-dot facebook"></span> Facebook
+        </a>
+        <a href="https://www.instagram.com/themuzammilnawaz/" target="_blank" rel="noopener">
+          <span class="social-dot instagram"></span> Instagram
+        </a>
+        <a href="https://x.com/themuzammilnawaz/" target="_blank" rel="noopener">
+          <span class="social-dot x"></span> X
+        </a>
+        <a href="https://www.github.com/themuzammilnawaz/" target="_blank" rel="noopener">
+          <span class="social-dot github"></span> GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Wallpapers are provided under their respective original licenses.</p>
+      <p>© 2026 Muzammil Nawaz · MIT License</p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

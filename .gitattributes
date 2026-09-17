@@ -1,0 +1,17 @@
+# Auto-detect text files and normalize line endings
+* text=auto eol=lf
+
+# Binary files
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.gif binary
+*.bmp binary
+*.tiff binary
+*.mp4 binary
+*.webm binary
+
+# Generated files
+wallpapers.json linguist-generated=true
+thumbnails/** linguist-generated=true

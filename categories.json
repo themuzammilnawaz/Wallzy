@@ -1,0 +1,42 @@
+{
+  "linux-distro": {
+    "name": "Linux Distro Stock",
+    "icon": "🐧",
+    "description": "Official wallpapers from Ubuntu, Fedora, Arch, Mint, and more"
+  },
+  "minimal-abstract": {
+    "name": "Minimal / Abstract",
+    "icon": "🎨",
+    "description": "Clean, geometric, and abstract designs"
+  },
+  "nature-landscapes": {
+    "name": "Nature / Landscapes",
+    "icon": "🌿",
+    "description": "Mountains, forests, oceans, and skies"
+  },
+  "anime-manga": {
+    "name": "Anime / Manga",
+    "icon": "🌸",
+    "description": "Anime-style art and manga illustrations"
+  },
+  "space-astronomy": {
+    "name": "Space / Astronomy",
+    "icon": "🌌",
+    "description": "Nebulae, galaxies, planets, and stars"
+  },
+  "dark-amoled": {
+    "name": "Dark / AMOLED",
+    "icon": "🌑",
+    "description": "True-black and low-light wallpapers for OLED displays"
+  },
+  "4k-8k": {
+    "name": "4K / 8K High-Res",
+    "icon": "🖥️",
+    "description": "Ultra-high-resolution wallpapers"
+  },
+  "movies-games": {
+    "name": "Movies / Games",
+    "icon": "🎬",
+    "description": "Wallpapers from films, TV shows, and video games"
+  }
+}
