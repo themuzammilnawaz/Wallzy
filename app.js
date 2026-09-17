@@ -47,6 +47,18 @@ const DOM = {
   countAll: $('#countAll'),
 };
 
+// ─── Small helpers ──────────────────────────────────────────────────────────
+
+function show(el) {
+  if (!el) return;
+  el.style.display = '';
+}
+
+function hide(el) {
+  if (!el) return;
+  el.style.display = 'none';
+}
+
 // ─── Theme ───────────────────────────────────────────────────────────────────
 
 function initTheme() {
@@ -75,20 +87,22 @@ let toastTimer = null;
 function showToast(message) {
   if (!DOM.toast) return;
   DOM.toast.textContent = message;
-  DOM.toast.hidden = false;
+  DOM.toast.style.display = 'block';
   requestAnimationFrame(() => DOM.toast.classList.add('show'));
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => {
     DOM.toast.classList.remove('show');
-    setTimeout(() => { DOM.toast.hidden = true; }, 250);
+    setTimeout(() => { DOM.toast.style.display = 'none'; }, 250);
   }, 2200);
 }
 
 // ─── Data loading ────────────────────────────────────────────────────────────
 
 function showLoadError(message) {
-  if (DOM.loading) DOM.loading.hidden = true;
-  if (DOM.empty) DOM.empty.hidden = false;
+  hide(DOM.loading);
+  if (DOM.empty) {
+    DOM.empty.style.display = 'block';
+  }
   if (DOM.emptyText) DOM.emptyText.textContent = message;
 }
 
@@ -126,7 +140,7 @@ async function loadData() {
   }
 
   showLoadError(
-    'Could not load wallpapers.json. The archive index may be missing or the GitHub Action has not run yet.'
+    'Could not load wallpapers.json. The archive index may be missing.'
   );
   return 'error';
 }
@@ -223,12 +237,12 @@ function renderGrid(reset = false) {
 
   if (STATE.filtered.length === 0) {
     DOM.grid.innerHTML = '';
-    DOM.empty.hidden = false;
-    DOM.loadMore.hidden = true;
+    show(DOM.empty);
+    hide(DOM.loadMore);
     return;
   }
 
-  DOM.empty.hidden = true;
+  hide(DOM.empty);
 
   const start = (STATE.page - 1) * STATE.perPage;
   const end = start + STATE.perPage;
@@ -249,7 +263,11 @@ function renderGrid(reset = false) {
     });
   });
 
-  DOM.loadMore.hidden = end >= STATE.filtered.length;
+  if (end >= STATE.filtered.length) {
+    hide(DOM.loadMore);
+  } else {
+    show(DOM.loadMore);
+  }
 }
 
 function createCard(wp, index) {
@@ -290,14 +308,12 @@ function createCard(wp, index) {
     </div>
   `;
 
-  // Click on image → lightbox
   card.querySelector('.card-image-wrap').addEventListener('click', (e) => {
     if (e.target.closest('[data-action="download"]')) return;
     e.preventDefault();
     openLightbox(index);
   });
 
-  // Preview button
   card.querySelector('[data-action="preview"]').addEventListener('click', (e) => {
     e.stopPropagation();
     openLightbox(index);
@@ -310,14 +326,14 @@ function updateResultsBar() {
   const hasFilters = STATE.category !== 'all' || STATE.query;
 
   if (!hasFilters) {
-    DOM.resultsBar.hidden = true;
+    hide(DOM.resultsBar);
     return;
   }
 
-  DOM.resultsBar.hidden = false;
+  show(DOM.resultsBar);
   const n = STATE.filtered.length;
   DOM.resultsText.textContent = `${n} wallpaper${n === 1 ? '' : 's'} found`;
-  DOM.clearFilters.hidden = false;
+  if (DOM.clearFilters) DOM.clearFilters.style.display = 'inline';
 }
 
 // ─── Lightbox ────────────────────────────────────────────────────────────────
@@ -326,32 +342,25 @@ function openLightbox(index) {
   STATE.lightboxIndex = index;
   updateLightbox();
 
-  // Show lightbox
-  DOM.lightbox.hidden = false;
-  DOM.lightbox.style.display = 'flex';
+  if (!DOM.lightbox) return;
+
+  DOM.lightbox.classList.add('open');
   DOM.lightbox.setAttribute('aria-hidden', 'false');
 
-  // Lock body scroll
   document.body.classList.add('lb-open');
-  document.body.style.overflow = 'hidden';
 
-  // Focus trap — focus the close button
   setTimeout(() => {
     if (DOM.lbClose) DOM.lbClose.focus();
-  }, 50);
+  }, 60);
 }
 
 function closeLightbox() {
-  if (DOM.lightbox.hidden && DOM.lightbox.style.display === 'none') {
-    return; // already closed
-  }
+  if (!DOM.lightbox) return;
 
-  DOM.lightbox.hidden = true;
-  DOM.lightbox.style.display = 'none';
+  DOM.lightbox.classList.remove('open');
   DOM.lightbox.setAttribute('aria-hidden', 'true');
 
   document.body.classList.remove('lb-open');
-  document.body.style.overflow = '';
 
   STATE.lightboxIndex = -1;
 }
@@ -454,20 +463,16 @@ function initEvents() {
     });
   }
 
-  // Global keyboard shortcuts
   document.addEventListener('keydown', (e) => {
-    // Focus search with /
     if (e.key === '/' && document.activeElement !== DOM.searchInput) {
       e.preventDefault();
       DOM.searchInput.focus();
       return;
     }
 
-    // Escape closes lightbox (highest priority)
     if (e.key === 'Escape') {
-      if (!DOM.lightbox.hidden) {
+      if (DOM.lightbox && DOM.lightbox.classList.contains('open')) {
         e.preventDefault();
-        e.stopPropagation();
         closeLightbox();
       } else if (document.activeElement === DOM.searchInput) {
         DOM.searchInput.blur();
@@ -475,16 +480,9 @@ function initEvents() {
       return;
     }
 
-    // Arrow navigation in lightbox
-    if (!DOM.lightbox.hidden) {
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        navigateLightbox(-1);
-      }
-      if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        navigateLightbox(1);
-      }
+    if (DOM.lightbox && DOM.lightbox.classList.contains('open')) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); navigateLightbox(-1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); navigateLightbox(1); }
     }
   });
 
@@ -497,9 +495,7 @@ function initEvents() {
     });
   }
 
-  // ── Lightbox event binding ─────────────────────────────────────────────
-
-  // Close button
+  // Lightbox: close button
   if (DOM.lbClose) {
     DOM.lbClose.addEventListener('click', (e) => {
       e.preventDefault();
@@ -508,7 +504,7 @@ function initEvents() {
     });
   }
 
-  // Prev / Next
+  // Lightbox: prev/next
   if (DOM.lbPrev) {
     DOM.lbPrev.addEventListener('click', (e) => {
       e.preventDefault();
@@ -516,7 +512,6 @@ function initEvents() {
       navigateLightbox(-1);
     });
   }
-
   if (DOM.lbNext) {
     DOM.lbNext.addEventListener('click', (e) => {
       e.preventDefault();
@@ -525,28 +520,21 @@ function initEvents() {
     });
   }
 
-  // Backdrop click (clicking outside the content)
+  // Lightbox: backdrop click
   if (DOM.lightbox) {
     DOM.lightbox.addEventListener('click', (e) => {
-      // Only close if the click target is the lightbox itself,
-      // not a child (image, buttons, info, etc.)
       if (e.target === DOM.lightbox) {
         e.preventDefault();
-        e.stopPropagation();
         closeLightbox();
       }
     });
 
-    // Prevent clicks inside the content from bubbling up and closing
     const lbContent = DOM.lightbox.querySelector('.lb-content');
     if (lbContent) {
-      lbContent.addEventListener('click', (e) => {
-        e.stopPropagation();
-      });
+      lbContent.addEventListener('click', (e) => e.stopPropagation());
     }
   }
 
-  // Copy install command
   if (DOM.copyInstall) {
     DOM.copyInstall.addEventListener('click', async () => {
       const cmd = DOM.copyInstall.dataset.command;
@@ -569,7 +557,7 @@ async function init() {
 
   const status = await loadData();
 
-  if (DOM.loading) DOM.loading.hidden = true;
+  hide(DOM.loading);
 
   if (status !== 'ok') return;
 
