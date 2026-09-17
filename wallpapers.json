@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2026-09-17T09:29:55.491801+00:00",
+  "generated": "2026-09-17T11:40:42.256138+00:00",
   "total": 14,
   "totalSize": 797258,
   "totalSizeHuman": "778.6 KB",
@@ -71,9 +71,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0011.webp",
           "size": 35982,
           "sizeHuman": "35.1 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1200×834",
+          "width": 1200,
+          "height": 834
         },
         {
           "id": "4k-8k::IMG-20260909-WA0012",
@@ -82,9 +82,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0012.webp",
           "size": 43034,
           "sizeHuman": "42.0 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1199×732",
+          "width": 1199,
+          "height": 732
         },
         {
           "id": "4k-8k::IMG-20260909-WA0013",
@@ -93,9 +93,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0013.webp",
           "size": 31554,
           "sizeHuman": "30.8 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1200×675",
+          "width": 1200,
+          "height": 675
         },
         {
           "id": "4k-8k::IMG-20260909-WA0014",
@@ -104,9 +104,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0014.webp",
           "size": 37828,
           "sizeHuman": "36.9 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1200×542",
+          "width": 1200,
+          "height": 542
         },
         {
           "id": "4k-8k::IMG-20260909-WA0015",
@@ -115,9 +115,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0015.webp",
           "size": 19602,
           "sizeHuman": "19.1 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "736×368",
+          "width": 736,
+          "height": 368
         },
         {
           "id": "4k-8k::IMG-20260909-WA0016",
@@ -126,9 +126,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0016.webp",
           "size": 69077,
           "sizeHuman": "67.5 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1200×840",
+          "width": 1200,
+          "height": 840
         },
         {
           "id": "4k-8k::IMG-20260909-WA0017",
@@ -137,9 +137,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0017.webp",
           "size": 40990,
           "sizeHuman": "40.0 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1100×636",
+          "width": 1100,
+          "height": 636
         },
         {
           "id": "4k-8k::IMG-20260909-WA0018",
@@ -148,9 +148,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0018.webp",
           "size": 54164,
           "sizeHuman": "52.9 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1200×791",
+          "width": 1200,
+          "height": 791
         },
         {
           "id": "4k-8k::IMG-20260909-WA0019",
@@ -159,9 +159,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0019.webp",
           "size": 90838,
           "sizeHuman": "88.7 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1200×812",
+          "width": 1200,
+          "height": 812
         },
         {
           "id": "4k-8k::IMG-20260909-WA0020",
@@ -170,9 +170,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0020.webp",
           "size": 77529,
           "sizeHuman": "75.7 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1200×700",
+          "width": 1200,
+          "height": 700
         },
         {
           "id": "4k-8k::IMG-20260909-WA0021",
@@ -181,9 +181,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0021.webp",
           "size": 84124,
           "sizeHuman": "82.2 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1198×563",
+          "width": 1198,
+          "height": 563
         },
         {
           "id": "4k-8k::IMG-20260909-WA0022",
@@ -192,9 +192,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0022.webp",
           "size": 58497,
           "sizeHuman": "57.1 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "736×414",
+          "width": 736,
+          "height": 414
         },
         {
           "id": "4k-8k::IMG-20260909-WA0023",
@@ -203,9 +203,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0023.webp",
           "size": 65898,
           "sizeHuman": "64.4 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1200×675",
+          "width": 1200,
+          "height": 675
         },
         {
           "id": "4k-8k::IMG-20260909-WA0024",
@@ -214,9 +214,9 @@
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0024.webp",
           "size": 88141,
           "sizeHuman": "86.1 KB",
-          "dimensions": "unknown",
-          "width": null,
-          "height": null
+          "dimensions": "1199×666",
+          "width": 1199,
+          "height": 666
         }
       ]
     },
