@@ -132,7 +132,7 @@ We welcome wallpaper submissions! Read CONTRIBUTING.md for full guidelines.
 
 ## 🛠️ Development
 
-```
+```bash
 make index    # Generate wallpapers.json
 make thumbs   # Generate WebP thumbnails
 make serve    # Serve gallery locally (localhost:8080)
@@ -141,26 +141,14 @@ make clean    # Remove generated files
 ```
 
 ---
-
-## 📄 License
-
-| Component ↕▾ | License ↕▾ |
-|---|---|
-| −**Code** (scripts, gallery, CLI) | [MIT](https://license/) |
-| −**Wallpapers** | Original licenses / CC0 where applicable |
-⚙
-
-Wallzy does not claim ownership of any wallpaper. If you are a copyright holder and believe your work has been included without permission, please [open an issue](https://github.com/themuzammilnawaz/Wallzy/issues) and we will remove it promptly.
-
----
 <div align="center">
 ### Connect with Muzammil Nawaz
 
-[[https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/+923057954200/)
-[[https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/themuzammilnawaz/)
-[[https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/themuzammilnawaz/)
-[[https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/themuzammilnawaz/)
-[[https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/themuzammilnawaz/)
+[https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/+923057954200/)
+[https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/themuzammilnawaz/)
+[https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/themuzammilnawaz/)
+[https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/themuzammilnawaz/)
+[https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/themuzammilnawaz/)
 
 **⬆ Back to Top** · **[🌐 Gallery](https://themuzammilnawaz.github.io/Wallzy/)** · **📥 Install**
 
