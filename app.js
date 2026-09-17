@@ -5,8 +5,6 @@
 
 'use strict';
 
-// ─── State ───────────────────────────────────────────────────────────────────
-
 const STATE = {
   data: null,
   allWallpapers: [],
@@ -17,13 +15,9 @@ const STATE = {
   perPage: 24,
   theme: 'light',
   lightboxIndex: -1,
-  revealed: new WeakSet(),
 };
 
-// ─── DOM refs ────────────────────────────────────────────────────────────────
-
 const $ = (sel) => document.querySelector(sel);
-const $$ = (sel) => document.querySelectorAll(sel);
 
 const DOM = {
   grid: $('#grid'),
@@ -79,33 +73,62 @@ function toggleTheme() {
 let toastTimer = null;
 
 function showToast(message) {
+  if (!DOM.toast) return;
   DOM.toast.textContent = message;
   DOM.toast.hidden = false;
   requestAnimationFrame(() => DOM.toast.classList.add('show'));
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => {
     DOM.toast.classList.remove('show');
-    setTimeout(() => { DOM.toast.hidden = true; }, 200);
+    setTimeout(() => { DOM.toast.hidden = true; }, 250);
   }, 2200);
 }
 
 // ─── Data loading ────────────────────────────────────────────────────────────
 
+function showLoadError(message) {
+  if (DOM.loading) DOM.loading.hidden = true;
+  if (DOM.empty) DOM.empty.hidden = false;
+  if (DOM.emptyText) DOM.emptyText.textContent = message;
+}
+
 async function loadData() {
-  try {
-    const res = await fetch('wallpapers.json', { cache: 'no-cache' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    STATE.data = data;
-    STATE.allWallpapers = flattenWallpapers(data);
-    return true;
-  } catch (err) {
-    console.error('Failed to load wallpapers.json:', err);
-    DOM.loading.hidden = true;
-    DOM.empty.hidden = false;
-    DOM.emptyText.textContent = 'Could not load wallpapers.json. If you opened this file directly, please serve it via a local server (e.g., python3 -m http.server).';
-    return false;
+  const paths = ['wallpapers.json', './wallpapers.json'];
+
+  for (const path of paths) {
+    try {
+      const res = await fetch(path, { cache: 'no-cache' });
+      if (!res.ok) continue;
+
+      const text = await res.text();
+      const trimmed = text.trim();
+
+      if (trimmed.startsWith('<')) {
+        console.warn(`Path ${path} returned HTML, not JSON`);
+        continue;
+      }
+
+      const data = JSON.parse(text);
+      STATE.data = data;
+      STATE.allWallpapers = flattenWallpapers(data);
+
+      if (STATE.allWallpapers.length === 0) {
+        showLoadError(
+          'The archive is empty. Wallpapers will appear here once images are added.'
+        );
+        return 'empty';
+      }
+
+      return 'ok';
+    } catch (err) {
+      console.warn(`Failed to load ${path}:`, err);
+    }
   }
+
+  showLoadError(
+    'Could not load wallpapers.json. The archive index may be missing or the GitHub Action has not run yet.'
+  );
+  return 'error';
 }
 
 function flattenWallpapers(data) {
@@ -161,9 +184,8 @@ function renderFilters() {
   const cats = STATE.data.categories || {};
   const total = STATE.data.total || 0;
 
-  DOM.countAll.textContent = total;
+  if (DOM.countAll) DOM.countAll.textContent = total;
 
-  // Remove old chips (keep "All")
   DOM.filters.querySelectorAll('.filter-chip:not([data-category="all"])').forEach((el) => el.remove());
 
   for (const [catId, cat] of Object.entries(cats)) {
@@ -179,9 +201,8 @@ function renderFilters() {
     DOM.filters.appendChild(btn);
   }
 
-  // Hero
-  if (STATE.heroCount) DOM.heroCount.textContent = formatCount(total);
-  if (STATE.heroCategories) DOM.heroCategories.textContent = Object.keys(cats).length;
+  if (DOM.heroCount) DOM.heroCount.textContent = formatCount(total);
+  if (DOM.heroCategories) DOM.heroCategories.textContent = Object.keys(cats).length;
 }
 
 function formatCount(n) {
@@ -222,14 +243,12 @@ function renderGrid(reset = false) {
 
   DOM.grid.appendChild(fragment);
 
-  // Lazy reveal
   requestAnimationFrame(() => {
     DOM.grid.querySelectorAll('.card:not(.revealed)').forEach((card) => {
       observer.observe(card);
     });
   });
 
-  // Load more visibility
   DOM.loadMore.hidden = end >= STATE.filtered.length;
 }
 
@@ -306,13 +325,34 @@ function updateResultsBar() {
 function openLightbox(index) {
   STATE.lightboxIndex = index;
   updateLightbox();
+
+  // Show lightbox
   DOM.lightbox.hidden = false;
+  DOM.lightbox.style.display = 'flex';
+  DOM.lightbox.setAttribute('aria-hidden', 'false');
+
+  // Lock body scroll
+  document.body.classList.add('lb-open');
   document.body.style.overflow = 'hidden';
+
+  // Focus trap — focus the close button
+  setTimeout(() => {
+    if (DOM.lbClose) DOM.lbClose.focus();
+  }, 50);
 }
 
 function closeLightbox() {
+  if (DOM.lightbox.hidden && DOM.lightbox.style.display === 'none') {
+    return; // already closed
+  }
+
   DOM.lightbox.hidden = true;
+  DOM.lightbox.style.display = 'none';
+  DOM.lightbox.setAttribute('aria-hidden', 'true');
+
+  document.body.classList.remove('lb-open');
   document.body.style.overflow = '';
+
   STATE.lightboxIndex = -1;
 }
 
@@ -327,7 +367,6 @@ function updateLightbox() {
   DOM.lbDownload.href = wp.file;
   DOM.lbDownload.download = wp.name;
 
-  // Nav visibility
   DOM.lbPrev.style.display = STATE.filtered.length > 1 ? '' : 'none';
   DOM.lbNext.style.display = STATE.filtered.length > 1 ? '' : 'none';
 }
@@ -386,7 +425,7 @@ function clearAll() {
 }
 window.clearAll = clearAll;
 
-// ─── Intersection Observer for reveal ────────────────────────────────────────
+// ─── Intersection Observer ──────────────────────────────────────────────────
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -402,65 +441,123 @@ const observer = new IntersectionObserver((entries) => {
 let searchTimer = null;
 
 function initEvents() {
-  // Theme
-  DOM.themeToggle.addEventListener('click', toggleTheme);
+  if (DOM.themeToggle) DOM.themeToggle.addEventListener('click', toggleTheme);
 
-  // Search
-  DOM.searchInput.addEventListener('input', (e) => {
-    clearTimeout(searchTimer);
-    const val = e.target.value;
-    searchTimer = setTimeout(() => {
-      STATE.query = val;
-      applyFilters();
-    }, 150);
-  });
+  if (DOM.searchInput) {
+    DOM.searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimer);
+      const val = e.target.value;
+      searchTimer = setTimeout(() => {
+        STATE.query = val;
+        applyFilters();
+      }, 150);
+    });
+  }
 
-  // Keyboard shortcut: / to focus search
+  // Global keyboard shortcuts
   document.addEventListener('keydown', (e) => {
+    // Focus search with /
     if (e.key === '/' && document.activeElement !== DOM.searchInput) {
       e.preventDefault();
       DOM.searchInput.focus();
+      return;
     }
+
+    // Escape closes lightbox (highest priority)
     if (e.key === 'Escape') {
       if (!DOM.lightbox.hidden) {
+        e.preventDefault();
+        e.stopPropagation();
         closeLightbox();
       } else if (document.activeElement === DOM.searchInput) {
         DOM.searchInput.blur();
       }
+      return;
     }
+
+    // Arrow navigation in lightbox
     if (!DOM.lightbox.hidden) {
-      if (e.key === 'ArrowLeft') navigateLightbox(-1);
-      if (e.key === 'ArrowRight') navigateLightbox(1);
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        navigateLightbox(-1);
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        navigateLightbox(1);
+      }
     }
   });
 
-  // Clear filters
-  DOM.clearFilters.addEventListener('click', clearAll);
+  if (DOM.clearFilters) DOM.clearFilters.addEventListener('click', clearAll);
 
-  // Load more
-  DOM.loadMoreBtn.addEventListener('click', () => {
-    STATE.page += 1;
-    renderGrid(false);
-  });
+  if (DOM.loadMoreBtn) {
+    DOM.loadMoreBtn.addEventListener('click', () => {
+      STATE.page += 1;
+      renderGrid(false);
+    });
+  }
 
-  // Lightbox
-  DOM.lbClose.addEventListener('click', closeLightbox);
-  DOM.lbPrev.addEventListener('click', () => navigateLightbox(-1));
-  DOM.lbNext.addEventListener('click', () => navigateLightbox(1));
-  DOM.lightbox.addEventListener('click', (e) => {
-    if (e.target === DOM.lightbox) closeLightbox();
-  });
+  // ── Lightbox event binding ─────────────────────────────────────────────
+
+  // Close button
+  if (DOM.lbClose) {
+    DOM.lbClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeLightbox();
+    });
+  }
+
+  // Prev / Next
+  if (DOM.lbPrev) {
+    DOM.lbPrev.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      navigateLightbox(-1);
+    });
+  }
+
+  if (DOM.lbNext) {
+    DOM.lbNext.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      navigateLightbox(1);
+    });
+  }
+
+  // Backdrop click (clicking outside the content)
+  if (DOM.lightbox) {
+    DOM.lightbox.addEventListener('click', (e) => {
+      // Only close if the click target is the lightbox itself,
+      // not a child (image, buttons, info, etc.)
+      if (e.target === DOM.lightbox) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeLightbox();
+      }
+    });
+
+    // Prevent clicks inside the content from bubbling up and closing
+    const lbContent = DOM.lightbox.querySelector('.lb-content');
+    if (lbContent) {
+      lbContent.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
+  }
 
   // Copy install command
-  DOM.copyInstall.addEventListener('click', async () => {
-    const cmd = DOM.copyInstall.dataset.command;
-    try {
-      await navigator.clipboard.writeText(cmd);
-      showToast('Install command copied!');
-    } catch {
-      showToast('Copy failed — select manually.');
-    }
-  });
+  if (DOM.copyInstall) {
+    DOM.copyInstall.addEventListener('click', async () => {
+      const cmd = DOM.copyInstall.dataset.command;
+      try {
+        await navigator.clipboard.writeText(cmd);
+        showToast('Install command copied!');
+      } catch {
+        showToast('Copy failed — select manually.');
+      }
+    });
+  }
 }
 
 // ─── Init ────────────────────────────────────────────────────────────────────
@@ -470,13 +567,14 @@ async function init() {
   initEvents();
   readUrl();
 
-  const ok = await loadData();
-  if (!ok) return;
+  const status = await loadData();
 
-  DOM.loading.hidden = true;
+  if (DOM.loading) DOM.loading.hidden = true;
+
+  if (status !== 'ok') return;
+
   renderFilters();
 
-  // Apply initial category from URL
   if (STATE.category !== 'all') {
     DOM.filters.querySelectorAll('.filter-chip').forEach((el) => {
       el.classList.toggle('active', el.dataset.category === STATE.category);
