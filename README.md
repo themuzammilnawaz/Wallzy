@@ -148,19 +148,19 @@ make clean    # Remove generated files
 <a href="https://wa.me/+923057954200/">
   <img src="https://cdn.simpleicons.org/whatsapp/25D366" width="45" height="45" alt="WhatsApp"/>
 </a>
-&nbsp;
+
 <a href="https://www.facebook.com/themuzammilnawaz/">
   <img src="https://cdn.simpleicons.org/facebook/1877F2" width="45" height="45" alt="Facebook"/>
 </a>
-&nbsp;
+
 <a href="https://www.instagram.com/themuzammilnawaz/">
   <img src="https://cdn.simpleicons.org/instagram/E4405F" width="45" height="45" alt="Instagram"/>
 </a>
-&nbsp;
+
 <a href="https://x.com/themuzammilnawaz/">
   <img src="https://cdn.simpleicons.org/x/000000" width="45" height="45" alt="X"/>
 </a>
-&nbsp;
+
 <a href="https://www.github.com/themuzammilnawaz/">
   <img src="https://cdn.simpleicons.org/github/181717" width="45" height="45" alt="GitHub"/>
 </a>
