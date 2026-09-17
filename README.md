@@ -142,15 +142,29 @@ make clean    # Remove generated files
 
 ---
 <div align="center">
+
 ### Connect with Muzammil Nawaz
 
-[https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/+923057954200/)
-[https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/themuzammilnawaz/)
-[https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/themuzammilnawaz/)
-[https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/themuzammilnawaz/)
-[https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/themuzammilnawaz/)
-
-**⬆ Back to Top** · **[🌐 Gallery](https://themuzammilnawaz.github.io/Wallzy/)** · **📥 Install**
+<a href="https://wa.me/+923057954200/">
+  <img src="https://cdn.simpleicons.org/whatsapp/25D366" width="45" height="45" alt="WhatsApp"/>
+</a>
+&nbsp;
+<a href="https://www.facebook.com/themuzammilnawaz/">
+  <img src="https://cdn.simpleicons.org/facebook/1877F2" width="45" height="45" alt="Facebook"/>
+</a>
+&nbsp;
+<a href="https://www.instagram.com/themuzammilnawaz/">
+  <img src="https://cdn.simpleicons.org/instagram/E4405F" width="45" height="45" alt="Instagram"/>
+</a>
+&nbsp;
+<a href="https://x.com/themuzammilnawaz/">
+  <img src="https://cdn.simpleicons.org/x/000000" width="45" height="45" alt="X"/>
+</a>
+&nbsp;
+<a href="https://www.github.com/themuzammilnawaz/">
+  <img src="https://cdn.simpleicons.org/github/181717" width="45" height="45" alt="GitHub"/>
+</a>
 
 <sub>Made with ❤️ by <a href="https://github.com/themuzammilnawaz">Muzammil Nawaz</a></sub>
+
 </div>
