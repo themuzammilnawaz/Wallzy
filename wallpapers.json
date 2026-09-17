@@ -1,0 +1,232 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-09-17T09:29:55.491801+00:00",
+  "total": 14,
+  "totalSize": 797258,
+  "totalSizeHuman": "778.6 KB",
+  "categoryCount": 8,
+  "curated_by": "Muzammil Nawaz",
+  "repository": "https://github.com/themuzammilnawaz/Wallzy",
+  "gallery": "https://themuzammilnawaz.github.io/Wallzy/",
+  "categories": {
+    "linux-distro": {
+      "id": "linux-distro",
+      "name": "Linux Distro Stock",
+      "icon": "🐧",
+      "description": "Official wallpapers from Ubuntu, Fedora, Arch, Mint, and more",
+      "count": 0,
+      "wallpapers": []
+    },
+    "minimal-abstract": {
+      "id": "minimal-abstract",
+      "name": "Minimal / Abstract",
+      "icon": "🎨",
+      "description": "Clean, geometric, and abstract designs",
+      "count": 0,
+      "wallpapers": []
+    },
+    "nature-landscapes": {
+      "id": "nature-landscapes",
+      "name": "Nature / Landscapes",
+      "icon": "🌿",
+      "description": "Mountains, forests, oceans, and skies",
+      "count": 0,
+      "wallpapers": []
+    },
+    "anime-manga": {
+      "id": "anime-manga",
+      "name": "Anime / Manga",
+      "icon": "🌸",
+      "description": "Anime-style art and manga illustrations",
+      "count": 0,
+      "wallpapers": []
+    },
+    "space-astronomy": {
+      "id": "space-astronomy",
+      "name": "Space / Astronomy",
+      "icon": "🌌",
+      "description": "Nebulae, galaxies, planets, and stars",
+      "count": 0,
+      "wallpapers": []
+    },
+    "dark-amoled": {
+      "id": "dark-amoled",
+      "name": "Dark / AMOLED",
+      "icon": "🌑",
+      "description": "True-black and low-light wallpapers for OLED displays",
+      "count": 0,
+      "wallpapers": []
+    },
+    "4k-8k": {
+      "id": "4k-8k",
+      "name": "4K / 8K High-Res",
+      "icon": "🖥️",
+      "description": "Ultra-high-resolution wallpapers",
+      "count": 14,
+      "wallpapers": [
+        {
+          "id": "4k-8k::IMG-20260909-WA0011",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0011.jpg",
+          "name": "Img 20260909 Wa0011",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0011.webp",
+          "size": 35982,
+          "sizeHuman": "35.1 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0012",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0012.jpg",
+          "name": "Img 20260909 Wa0012",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0012.webp",
+          "size": 43034,
+          "sizeHuman": "42.0 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0013",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0013.jpg",
+          "name": "Img 20260909 Wa0013",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0013.webp",
+          "size": 31554,
+          "sizeHuman": "30.8 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0014",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0014.jpg",
+          "name": "Img 20260909 Wa0014",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0014.webp",
+          "size": 37828,
+          "sizeHuman": "36.9 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0015",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0015.jpg",
+          "name": "Img 20260909 Wa0015",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0015.webp",
+          "size": 19602,
+          "sizeHuman": "19.1 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0016",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0016.jpg",
+          "name": "Img 20260909 Wa0016",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0016.webp",
+          "size": 69077,
+          "sizeHuman": "67.5 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0017",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0017.jpg",
+          "name": "Img 20260909 Wa0017",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0017.webp",
+          "size": 40990,
+          "sizeHuman": "40.0 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0018",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0018.jpg",
+          "name": "Img 20260909 Wa0018",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0018.webp",
+          "size": 54164,
+          "sizeHuman": "52.9 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0019",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0019.jpg",
+          "name": "Img 20260909 Wa0019",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0019.webp",
+          "size": 90838,
+          "sizeHuman": "88.7 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0020",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0020.jpg",
+          "name": "Img 20260909 Wa0020",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0020.webp",
+          "size": 77529,
+          "sizeHuman": "75.7 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0021",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0021.jpg",
+          "name": "Img 20260909 Wa0021",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0021.webp",
+          "size": 84124,
+          "sizeHuman": "82.2 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0022",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0022.jpg",
+          "name": "Img 20260909 Wa0022",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0022.webp",
+          "size": 58497,
+          "sizeHuman": "57.1 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0023",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0023.jpg",
+          "name": "Img 20260909 Wa0023",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0023.webp",
+          "size": 65898,
+          "sizeHuman": "64.4 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        },
+        {
+          "id": "4k-8k::IMG-20260909-WA0024",
+          "file": "wallpapers/4k-8k/IMG-20260909-WA0024.jpg",
+          "name": "Img 20260909 Wa0024",
+          "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0024.webp",
+          "size": 88141,
+          "sizeHuman": "86.1 KB",
+          "dimensions": "unknown",
+          "width": null,
+          "height": null
+        }
+      ]
+    },
+    "movies-games": {
+      "id": "movies-games",
+      "name": "Movies / Games",
+      "icon": "🎬",
+      "description": "Wallpapers from films, TV shows, and video games",
+      "count": 0,
+      "wallpapers": []
+    }
+  }
+}
