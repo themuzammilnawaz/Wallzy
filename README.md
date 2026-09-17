@@ -151,8 +151,6 @@ make clean    # Remove generated files
 <a href="https://x.com/themuzammilnawaz/"><img src="https://cdn.simpleicons.org/x/000000" width="45" height="45"/></a>
 <a href="https://www.github.com/themuzammilnawaz/"><img src="https://cdn.simpleicons.org/github/181717" width="45" height="45"/></a>
 
-</div>
-
 <sub>Made with ❤️ by <a href="https://github.com/themuzammilnawaz">Muzammil Nawaz</a></sub>
 
 </div>
