@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2026-09-18T04:07:49.481880+00:00",
+  "generated": "2026-09-18T04:10:20.315816+00:00",
   "total": 33,
   "totalSize": 40576129,
   "totalSizeHuman": "38.7 MB",
@@ -205,7 +205,7 @@
       "id": "linux-distro",
       "name": "Linux Distro Stock",
       "icon": "🐧",
-      "description": "Official wallpapers from Ubuntu, Fedora, Arch, Mint, and more",
+      "description": "Official wallpapers from Ubuntu, Fedora, Arch, Mint, Zorin, and more",
       "count": 19,
       "wallpapers": [
         {
