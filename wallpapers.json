@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated": "2026-09-18T03:45:39.069834+00:00",
-  "total": 14,
-  "totalSize": 797258,
-  "totalSizeHuman": "778.6 KB",
+  "generated": "2026-09-18T03:55:15.520248+00:00",
+  "total": 33,
+  "totalSize": 40576129,
+  "totalSizeHuman": "38.7 MB",
   "categoryCount": 8,
   "curated_by": "Muzammil Nawaz",
   "repository": "https://github.com/themuzammilnawaz/Wallzy",
@@ -14,8 +14,294 @@
       "name": "Linux Distro Stock",
       "icon": "🐧",
       "description": "Official wallpapers from Ubuntu, Fedora, Arch, Mint, and more",
-      "count": 0,
-      "wallpapers": []
+      "count": 19,
+      "wallpapers": [
+        {
+          "id": "linux-distro::Zorin/Beach-by-Troy-T.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Beach-by-Troy-T.jpg",
+          "name": "Zorin — Beach By Troy T",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Beach-by-Troy-T.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 2369616,
+          "sizeHuman": "2.3 MB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Dolomites-by-Wirestock.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Dolomites-by-Wirestock.jpg",
+          "name": "Zorin — Dolomites By Wirestock",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Dolomites-by-Wirestock.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 3602732,
+          "sizeHuman": "3.4 MB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Evening-Desert-by-Greg-Rakozy.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Evening-Desert-by-Greg-Rakozy.jpg",
+          "name": "Zorin — Evening Desert By Greg Rakozy",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Evening-Desert-by-Greg-Rakozy.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 2821441,
+          "sizeHuman": "2.7 MB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Flower-Blossom-by-Simon-Berger.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Flower-Blossom-by-Simon-Berger.jpg",
+          "name": "Zorin — Flower Blossom By Simon Berger",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Flower-Blossom-by-Simon-Berger.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 598601,
+          "sizeHuman": "584.6 KB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Flying-by-Sylvain-Mauroux.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Flying-by-Sylvain-Mauroux.jpg",
+          "name": "Zorin — Flying By Sylvain Mauroux",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Flying-by-Sylvain-Mauroux.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 1375017,
+          "sizeHuman": "1.3 MB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Island-by-Simon-Spring.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Island-by-Simon-Spring.jpg",
+          "name": "Zorin — Island By Simon Spring",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Island-by-Simon-Spring.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 3853212,
+          "sizeHuman": "3.7 MB",
+          "dimensions": "6144×4292",
+          "width": 6144,
+          "height": 4292
+        },
+        {
+          "id": "linux-distro::Zorin/Landscape-by-Jimmy-Conover.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Landscape-by-Jimmy-Conover.jpg",
+          "name": "Zorin — Landscape By Jimmy Conover",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Landscape-by-Jimmy-Conover.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 1900865,
+          "sizeHuman": "1.8 MB",
+          "dimensions": "3678×2066",
+          "width": 3678,
+          "height": 2066
+        },
+        {
+          "id": "linux-distro::Zorin/Lavender-Field-by-Simon-Spring.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Lavender-Field-by-Simon-Spring.jpg",
+          "name": "Zorin — Lavender Field By Simon Spring",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Lavender-Field-by-Simon-Spring.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 2049134,
+          "sizeHuman": "2.0 MB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Night-Desert-by-Daniel-Olah.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Night-Desert-by-Daniel-Olah.jpg",
+          "name": "Zorin — Night Desert By Daniel Olah",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Night-Desert-by-Daniel-Olah.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 1804530,
+          "sizeHuman": "1.7 MB",
+          "dimensions": "3840×2160",
+          "width": 3840,
+          "height": 2160
+        },
+        {
+          "id": "linux-distro::Zorin/Ocean-Horizon-by-Dave-Hoefler.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Ocean-Horizon-by-Dave-Hoefler.jpg",
+          "name": "Zorin — Ocean Horizon By Dave Hoefler",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Ocean-Horizon-by-Dave-Hoefler.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 1422934,
+          "sizeHuman": "1.4 MB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Pool-Holiday-by-Kateryna-Hliznitsova.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Pool-Holiday-by-Kateryna-Hliznitsova.jpg",
+          "name": "Zorin — Pool Holiday By Kateryna Hliznitsova",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Pool-Holiday-by-Kateryna-Hliznitsova.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 1159553,
+          "sizeHuman": "1.1 MB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Rio-by-Marcos-Paulo-Prado.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Rio-by-Marcos-Paulo-Prado.jpg",
+          "name": "Zorin — Rio By Marcos Paulo Prado",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Rio-by-Marcos-Paulo-Prado.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 865726,
+          "sizeHuman": "845.4 KB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Shore-by-Kamran-Abdullayev.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Shore-by-Kamran-Abdullayev.jpg",
+          "name": "Zorin — Shore By Kamran Abdullayev",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Shore-by-Kamran-Abdullayev.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 2491228,
+          "sizeHuman": "2.4 MB",
+          "dimensions": "5976×2560",
+          "width": 5976,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Snowy-Mountains-by-Luke-Peterson.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Snowy-Mountains-by-Luke-Peterson.jpg",
+          "name": "Zorin — Snowy Mountains By Luke Peterson",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Snowy-Mountains-by-Luke-Peterson.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 3348236,
+          "sizeHuman": "3.2 MB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Snowy-Tree-by-Pascal-Debrunner.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Snowy-Tree-by-Pascal-Debrunner.jpg",
+          "name": "Zorin — Snowy Tree By Pascal Debrunner",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Snowy-Tree-by-Pascal-Debrunner.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 1340988,
+          "sizeHuman": "1.3 MB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Sunny-by-Dembee-Tsogoo.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Sunny-by-Dembee-Tsogoo.jpg",
+          "name": "Zorin — Sunny By Dembee Tsogoo",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Sunny-by-Dembee-Tsogoo.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 1304610,
+          "sizeHuman": "1.2 MB",
+          "dimensions": "3840×2560",
+          "width": 3840,
+          "height": 2560
+        },
+        {
+          "id": "linux-distro::Zorin/Tropical-by-Colin+Meg.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Tropical-by-Colin+Meg.jpg",
+          "name": "Zorin — Tropical By Colin+meg",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Tropical-by-Colin+Meg.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 1895548,
+          "sizeHuman": "1.8 MB",
+          "dimensions": "4000×2250",
+          "width": 4000,
+          "height": 2250
+        },
+        {
+          "id": "linux-distro::Zorin/Zorin-Dark.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Zorin-Dark.jpg",
+          "name": "Zorin — Zorin Dark",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Zorin-Dark.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 2653418,
+          "sizeHuman": "2.5 MB",
+          "dimensions": "6144×3340",
+          "width": 6144,
+          "height": 3340
+        },
+        {
+          "id": "linux-distro::Zorin/Zorin.jpg",
+          "file": "wallpapers/linux-distro/Zorin/Zorin.jpg",
+          "name": "Zorin — Zorin",
+          "thumbnail": "thumbnails/linux-distro/Zorin/Zorin.webp",
+          "subfolder": "Zorin",
+          "subfolders": [
+            "Zorin"
+          ],
+          "size": 2921482,
+          "sizeHuman": "2.8 MB",
+          "dimensions": "6144×3340",
+          "width": 6144,
+          "height": 3340
+        }
+      ]
     },
     "minimal-abstract": {
       "id": "minimal-abstract",
@@ -65,10 +351,12 @@
       "count": 14,
       "wallpapers": [
         {
-          "id": "4k-8k::IMG-20260909-WA0011",
+          "id": "4k-8k::IMG-20260909-WA0011.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0011.jpg",
           "name": "Img 20260909 Wa0011",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0011.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 35982,
           "sizeHuman": "35.1 KB",
           "dimensions": "1200×834",
@@ -76,10 +364,12 @@
           "height": 834
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0012",
+          "id": "4k-8k::IMG-20260909-WA0012.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0012.jpg",
           "name": "Img 20260909 Wa0012",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0012.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 43034,
           "sizeHuman": "42.0 KB",
           "dimensions": "1199×732",
@@ -87,10 +377,12 @@
           "height": 732
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0013",
+          "id": "4k-8k::IMG-20260909-WA0013.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0013.jpg",
           "name": "Img 20260909 Wa0013",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0013.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 31554,
           "sizeHuman": "30.8 KB",
           "dimensions": "1200×675",
@@ -98,10 +390,12 @@
           "height": 675
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0014",
+          "id": "4k-8k::IMG-20260909-WA0014.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0014.jpg",
           "name": "Img 20260909 Wa0014",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0014.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 37828,
           "sizeHuman": "36.9 KB",
           "dimensions": "1200×542",
@@ -109,10 +403,12 @@
           "height": 542
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0015",
+          "id": "4k-8k::IMG-20260909-WA0015.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0015.jpg",
           "name": "Img 20260909 Wa0015",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0015.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 19602,
           "sizeHuman": "19.1 KB",
           "dimensions": "736×368",
@@ -120,10 +416,12 @@
           "height": 368
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0016",
+          "id": "4k-8k::IMG-20260909-WA0016.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0016.jpg",
           "name": "Img 20260909 Wa0016",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0016.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 69077,
           "sizeHuman": "67.5 KB",
           "dimensions": "1200×840",
@@ -131,10 +429,12 @@
           "height": 840
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0017",
+          "id": "4k-8k::IMG-20260909-WA0017.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0017.jpg",
           "name": "Img 20260909 Wa0017",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0017.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 40990,
           "sizeHuman": "40.0 KB",
           "dimensions": "1100×636",
@@ -142,10 +442,12 @@
           "height": 636
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0018",
+          "id": "4k-8k::IMG-20260909-WA0018.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0018.jpg",
           "name": "Img 20260909 Wa0018",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0018.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 54164,
           "sizeHuman": "52.9 KB",
           "dimensions": "1200×791",
@@ -153,10 +455,12 @@
           "height": 791
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0019",
+          "id": "4k-8k::IMG-20260909-WA0019.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0019.jpg",
           "name": "Img 20260909 Wa0019",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0019.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 90838,
           "sizeHuman": "88.7 KB",
           "dimensions": "1200×812",
@@ -164,10 +468,12 @@
           "height": 812
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0020",
+          "id": "4k-8k::IMG-20260909-WA0020.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0020.jpg",
           "name": "Img 20260909 Wa0020",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0020.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 77529,
           "sizeHuman": "75.7 KB",
           "dimensions": "1200×700",
@@ -175,10 +481,12 @@
           "height": 700
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0021",
+          "id": "4k-8k::IMG-20260909-WA0021.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0021.jpg",
           "name": "Img 20260909 Wa0021",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0021.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 84124,
           "sizeHuman": "82.2 KB",
           "dimensions": "1198×563",
@@ -186,10 +494,12 @@
           "height": 563
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0022",
+          "id": "4k-8k::IMG-20260909-WA0022.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0022.jpg",
           "name": "Img 20260909 Wa0022",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0022.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 58497,
           "sizeHuman": "57.1 KB",
           "dimensions": "736×414",
@@ -197,10 +507,12 @@
           "height": 414
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0023",
+          "id": "4k-8k::IMG-20260909-WA0023.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0023.jpg",
           "name": "Img 20260909 Wa0023",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0023.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 65898,
           "sizeHuman": "64.4 KB",
           "dimensions": "1200×675",
@@ -208,10 +520,12 @@
           "height": 675
         },
         {
-          "id": "4k-8k::IMG-20260909-WA0024",
+          "id": "4k-8k::IMG-20260909-WA0024.jpg",
           "file": "wallpapers/4k-8k/IMG-20260909-WA0024.jpg",
           "name": "Img 20260909 Wa0024",
           "thumbnail": "thumbnails/4k-8k/IMG-20260909-WA0024.webp",
+          "subfolder": null,
+          "subfolders": [],
           "size": 88141,
           "sizeHuman": "86.1 KB",
           "dimensions": "1199×666",
