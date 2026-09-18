@@ -2,7 +2,7 @@
   "linux-distro": {
     "name": "Linux Distro Stock",
     "icon": "🐧",
-    "description": "Official wallpapers from Ubuntu, Fedora, Arch, Mint, and more"
+    "description": "Official wallpapers from Ubuntu, Fedora, Arch, Mint, Zorin, and more"
   },
   "minimal-abstract": {
     "name": "Minimal / Abstract",
@@ -27,7 +27,7 @@
   "dark-amoled": {
     "name": "Dark / AMOLED",
     "icon": "🌑",
-    "description": "True-black and low-light wallpapers for OLED displays"
+    "description": "True-black wallpapers for OLED displays"
   },
   "4k-8k": {
     "name": "4K / 8K High-Res",
@@ -37,6 +37,6 @@
   "movies-games": {
     "name": "Movies / Games",
     "icon": "🎬",
-    "description": "Wallpapers from films, TV shows, and video games"
+    "description": "Wallpapers from films and video games"
   }
 }
