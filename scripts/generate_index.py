@@ -2,10 +2,15 @@
 """
 Wallzy — Wallpaper Index Generator
 
-RULES:
-  1. Every folder directly inside wallpapers/ = a CATEGORY
-  2. Every image inside that category (at any depth, including nested
-     subfolders) is included in the category's wallpaper list
+SOURCE OF TRUTH: wallpapers/ folder structure
+  - Every first-level folder inside wallpapers/ = one category
+  - New folder   → new category appears automatically
+  - Deleted folder → category disappears automatically
+  - Nested subfolders inside a category are scanned recursively
+
+categories.json is ONLY for optional metadata (name, icon, description).
+If categories.json has entries without a matching folder, they are ignored.
+If a folder exists without a categories.json entry, metadata is auto-generated.
 
 Curated & developed by Muzammil Nawaz
 """
@@ -62,24 +67,38 @@ def auto_icon(cat_id):
 def auto_name(cat_id):
     return cat_id.replace("-", " ").replace("_", " ").title()
 
-def load_defined_categories():
+def load_category_metadata():
+    """Load categories.json — used ONLY for optional metadata overrides."""
     if not CATEGORIES_FILE.exists():
         return {}
     try:
-        return json.loads(CATEGORIES_FILE.read_text(encoding="utf-8"))
+        data = json.loads(CATEGORIES_FILE.read_text(encoding="utf-8"))
+        return {k: v for k, v in data.items() if isinstance(v, dict)}
     except Exception as e:
         print(f"⚠  categories.json unreadable: {e}")
         return {}
 
 def discover_categories():
-    """First-level folders inside wallpapers/ = categories."""
-    defined = load_defined_categories()
+    """
+    Scan wallpapers/ for first-level folders.
+    Folder structure is the SOURCE OF TRUTH.
+    categories.json only provides optional metadata for folders that exist.
+    """
+    metadata = load_category_metadata()
     categories = {}
 
-    # Merge metadata from categories.json
-    for cat_id, meta in defined.items():
-        if not isinstance(meta, dict):
+    if not WALLPAPERS_DIR.exists():
+        return categories
+
+    for folder in sorted(WALLPAPERS_DIR.iterdir()):
+        if not folder.is_dir():
             continue
+        if folder.name.startswith("."):
+            continue
+
+        cat_id = folder.name
+        meta = metadata.get(cat_id, {})
+
         categories[cat_id] = {
             "id": cat_id,
             "name": meta.get("name") or auto_name(cat_id),
@@ -88,25 +107,6 @@ def discover_categories():
             "count": 0,
             "wallpapers": [],
         }
-
-    # Scan wallpapers/ for first-level folders
-    if WALLPAPERS_DIR.exists():
-        for folder in sorted(WALLPAPERS_DIR.iterdir()):
-            if not folder.is_dir():
-                continue
-            if folder.name.startswith("."):
-                continue
-            if folder.name in categories:
-                continue
-            categories[folder.name] = {
-                "id": folder.name,
-                "name": auto_name(folder.name),
-                "icon": auto_icon(folder.name),
-                "description": "",
-                "count": 0,
-                "wallpapers": [],
-                "_auto": True,
-            }
 
     return categories
 
@@ -227,88 +227,84 @@ def main():
 
     if not WALLPAPERS_DIR.exists():
         print(f"✗ {WALLPAPERS_DIR} not found.")
+        print("  Create it with at least one category folder:")
+        print("    mkdir -p wallpapers/nature-landscapes")
         sys.exit(1)
 
     categories = discover_categories()
 
     if not categories:
-        print("⚠  No categories found. Create wallpapers/<category>/ folders.")
+        print("⚠  No category folders found inside wallpapers/")
+        print("   Create at least one: mkdir -p wallpapers/nature-landscapes")
 
     total = 0
     total_size = 0
     missing_dims = 0
-    auto_detected = []
+    non_empty_categories = []
 
     for cat_id, cat in categories.items():
         cat_dir = WALLPAPERS_DIR / cat_id
         wallpapers = []
 
-        if cat_dir.exists():
-            # RECURSIVE SCAN — includes nested subfolders
+        try:
+            all_files = sorted(cat_dir.rglob("*"))
+        except Exception as e:
+            print(f"  ⚠ Cannot read {cat_dir}: {e}")
+            all_files = []
+
+        for img in all_files:
             try:
-                all_files = sorted(cat_dir.rglob("*"))
+                if not img.is_file():
+                    continue
+                if img.suffix.lower() not in IMAGE_EXTENSIONS:
+                    continue
+
+                rel = img.relative_to(cat_dir)
+                subfolders = list(rel.parts[:-1])
+
+                base = pretty_name(img.stem)
+                if subfolders:
+                    prefix = " / ".join(
+                        s.replace("-", " ").replace("_", " ").title()
+                        for s in subfolders
+                    )
+                    display_name = f"{prefix} — {base}"
+                else:
+                    display_name = base
+
+                thumb_rel = rel.with_suffix(".webp")
+                thumb_path = (THUMBNAILS_DIR / cat_id / thumb_rel).as_posix()
+
+                wp_id = f"{cat_id}::{'/'.join(rel.parts)}"
+
+                w, h = read_dimensions(img)
+                size = img.stat().st_size
+                dims = f"{w}×{h}" if w and h else "—"
+                if not (w and h):
+                    missing_dims += 1
+
+                wallpapers.append({
+                    "id": wp_id,
+                    "file": img.as_posix(),
+                    "name": display_name,
+                    "thumbnail": thumb_path,
+                    "subfolder": subfolders[0] if subfolders else None,
+                    "subfolders": subfolders,
+                    "size": size,
+                    "sizeHuman": human_size(size),
+                    "dimensions": dims,
+                    "width": w,
+                    "height": h,
+                })
+                total += 1
+                total_size += size
             except Exception as e:
-                print(f"  ⚠ Cannot read {cat_dir}: {e}")
-                all_files = []
-
-            for img in all_files:
-                try:
-                    if not img.is_file():
-                        continue
-                    if img.suffix.lower() not in IMAGE_EXTENSIONS:
-                        continue
-
-                    rel = img.relative_to(cat_dir)
-                    subfolders = list(rel.parts[:-1])  # e.g. ["Zorin"]
-
-                    # Display name:
-                    #   "Zorin — Landscape By Jimmy Conover"
-                    #   or "Landscape By Jimmy Conover" if not in a subfolder
-                    base = pretty_name(img.stem)
-                    if subfolders:
-                        prefix = " / ".join(
-                            s.replace("-", " ").replace("_", " ").title()
-                            for s in subfolders
-                        )
-                        display_name = f"{prefix} — {base}"
-                    else:
-                        display_name = base
-
-                    # Thumbnail path mirrors the source structure
-                    thumb_rel = rel.with_suffix(".webp")
-                    thumb_path = (THUMBNAILS_DIR / cat_id / thumb_rel).as_posix()
-
-                    # Unique ID (never collides)
-                    wp_id = f"{cat_id}::{'/'.join(rel.parts)}"
-
-                    w, h = read_dimensions(img)
-                    size = img.stat().st_size
-                    dims = f"{w}×{h}" if w and h else "—"
-                    if not (w and h):
-                        missing_dims += 1
-
-                    wallpapers.append({
-                        "id": wp_id,
-                        "file": img.as_posix(),
-                        "name": display_name,
-                        "thumbnail": thumb_path,
-                        "subfolder": subfolders[0] if subfolders else None,
-                        "subfolders": subfolders,
-                        "size": size,
-                        "sizeHuman": human_size(size),
-                        "dimensions": dims,
-                        "width": w,
-                        "height": h,
-                    })
-                    total += 1
-                    total_size += size
-                except Exception as e:
-                    print(f"  ⚠ Skipped {img.name}: {e}")
+                print(f"  ⚠ Skipped {img.name}: {e}")
 
         cat["count"] = len(wallpapers)
         cat["wallpapers"] = wallpapers
-        if cat.pop("_auto", False):
-            auto_detected.append(cat_id)
+        if wallpapers:
+            non_empty_categories.append(cat_id)
 
         status = f"{len(wallpapers):>5} wallpapers" if wallpapers else "  (empty)"
         print(f"  {cat['icon']} {cat['name']:<24} {status}")
@@ -320,6 +316,7 @@ def main():
         "totalSize": total_size,
         "totalSizeHuman": human_size(total_size),
         "categoryCount": len(categories),
+        "emptyCategories": len(categories) - len(non_empty_categories),
         "curated_by": "Muzammil Nawaz",
         "repository": "https://github.com/themuzammilnawaz/Wallzy",
         "gallery": "https://themuzammilnawaz.github.io/Wallzy/",
@@ -331,20 +328,13 @@ def main():
     )
 
     print("────────────────────────────────────")
-    print(f"  Categories: {len(categories)}")
-    print(f"  Total:      {total} wallpapers ({human_size(total_size)})")
+    print(f"  Categories (from folders): {len(categories)}")
+    print(f"  Total:                     {total} wallpapers ({human_size(total_size)})")
     if missing_dims:
-        print(f"  ⚠ Unknown dimensions: {missing_dims}")
-    print(f"  Written:    {OUTPUT_FILE}")
-
-    if auto_detected:
-        print("")
-        print("  💡 Auto-detected categories:")
-        for cid in auto_detected:
-            print(f"     - {cid}")
-
+        print(f"  ⚠ Unknown dimensions:      {missing_dims}")
+    print(f"  Written:                   {OUTPUT_FILE}")
     print("✓ Done.")
 
 if __name__ == "__main__":
     main()
-    
+  
